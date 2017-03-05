@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New York Times Search</title>
+</head>
+<body>
+
+	<!-- Link to Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Link to style.css -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron text-center">
+  	<h1>New York Times Search</h1>
+  </div>
+
+  <div class="col-12 page-section">
+    <div class="bg-primary section-title">Search Parameters</div>
+    <div class="form-group">
+      <label for="searchTerms">Search Terms</label>
+      <input type="text" class="form-control fields" id="search-terms">
+    </div>
+    <div class="form-group">
+      	<label for="record-count">Number of Records to Return</label>
+      	<select class="form-control fields" id="record-count">
+		  <option value="1">1</option>
+		  <option value="5" selected>5</option>
+		  <option value="10">10</option>
+	   	</select>
+    </div>
+    <div class="form-group">
+     	<label for="start-year">Start Year (Optional)</label>
+     	<input type="text" class="form-control fields" id="start-year">
+    </div>
+      <div class="form-group">
+      <label for="end-year">End Year (Optional)</label>
+      <input type="text" class="form-control fields" id="end-year">
+    </div>
+
+    <button type="submit" class="btn btn-primary" id="submit-data">Search</button>
+    <button type="reset" class="btn btn-primary" id="clear-data">Clear</button>
+  
+  </div>
+
+    <div class="col-12 page-section">
+    	<div class="bg-primary section-title" id="search-results">Top Articles</div>
+    </div>
+
+</div>
+
+
+<script type="text/javascript" src="assets/js/script.js"></script>
+
+</body>
+</html>
