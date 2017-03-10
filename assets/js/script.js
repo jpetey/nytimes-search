@@ -9,56 +9,78 @@
       url: queryURL,
       method: "GET"
     }).done(function(results) {
-      
+     
+    console.log("Query URL after GET: "+ queryURL);
+
+    console.log(results);
+
     for (var i = 0; i < numberToReturn; i++) {
       // Create a div to hold each group of search results
       var searchResults = $("<div class='news-articles'>");
       
-      // Store the headline data
-      var headline = results.response.docs[i].headline.main;
-      console.log(results.response.docs[i].headline.main)
+      // Check if headline is 'null' so your code doesn't break
+      if (results.response.docs[i].headline) {
 
-      // Create an element to have the Headline displayed
-      var pHeadline = $("<p>").text(headline);
+        // Store the headline data
+        var headline = results.response.docs[i].headline.main;
+        console.log("Log Headline: " + headline);        
 
-      // Displaying the Headline
-      searchResults.append(pHeadline);
+        // Create an element to have the Headline displayed
+        var pHeadline = $("<p>").text(headline);
 
-      // Store the author data
-      var author = results.response.docs[i].byline.original;
+        // Displaying the Headline
+        searchResults.append(pHeadline);
+      }
 
-      // Create an element to have the author displayed
-      var pAuthor = $("<p>").text(author);
+      // Check if headline is 'null' so your code doesn't break
+      if(results.response.docs[i].byline && results.response.docs[i].byline.original !=="null") {
 
-      // Displaying the author
-      searchResults.append(pAuthor);
+        // Store the author data
+        var author = results.response.docs[i].byline.original;
+        console.log("Log Author: " + author)
 
-      // Store the section data
-      var section = results.response.docs[i].section_name;
+        // Create an element to have the author displayed
+        var pAuthor = $("<p>").text(author);
 
-      // Create an element to have the section name displayed
-      var pSection = $("<p>").text("Section: " + section);
+        // Displaying the author
+        searchResults.append(pAuthor);
+      }
 
-      // Displaying the section
-      searchResults.append(pSection);
+      if (results.response.docs[i].section_name !=="null") {
+        // Store the section data
+        var section = results.response.docs[i].section_name;
+        console.log("Log section: " + section);
 
-      // Store the date-released data
-      var dateReleased = results.response.docs[i].pub_date;
+        // Create an element to have the section name displayed
+        var pSection = $("<p>").text("Section: " + section);
 
-      // Create an element to have the date released displayed
-      var pDateReleased = $("<p>").text(dateReleased);
+        // Displaying the section
+        searchResults.append(pSection);
+      } 
 
-      // Displaying the date released
-      searchResults.append(pDateReleased);
+      if (results.response.docs[i].pub_date !=="null") {
+        // Store the date-published data
+        var dateReleased = results.response.docs[i].pub_date;
 
-      // Store the Link to the News Story
-      var linkToContent = results.response.docs[i].web_url;
+        // Create an element to have the date published displayed
+        var pDateReleased = $("<p>").text(dateReleased);
+        console.log("Log date published: " + pDateReleased)
 
-      // Creating an element to hold the Link to the News Story
-      var aLinkToContent = $("<a>").attr("href", linkToContent);
+        // Displaying the date published
+        searchResults.append(pDateReleased);
+      }
 
-      // Append the Link to the News Story
-      searchResults.append(aLinkToContent);
+      if (results.response.docs[i].web_url !=="null") {
+        // Store the Link to the News Story
+        var linkToContent = results.response.docs[i].web_url;
+        console.log(linkToContent);
+
+        // Creating an element to hold the Link to the News Story
+        var aLinkToContent = $("<a>").attr("href", linkToContent);
+
+        // Append the Link to the News Story
+        searchResults.append(aLinkToContent);
+      }         
     }
 
       // Put each block of articles on the page
