@@ -73,13 +73,15 @@
       if (results.response.docs[i].web_url !=="null") {
         // Store the Link to the News Story
         var linkToContent = results.response.docs[i].web_url;
-        console.log(linkToContent);
+        console.log(linkToContent); 
 
         // Creating an element to hold the Link to the News Story
-        var aLinkToContent = $("<a>").attr("href", linkToContent);
+        var aLinkToContent = $("<a>").attr("href", linkToContent).attr("target","<_blank> </_blank>");
+        console.log(aLinkToContent);
 
         // Append the Link to the News Story
-        searchResults.append(aLinkToContent);
+        var finalLinkToContent = aLinkToContent.append(linkToContent);
+        searchResults.append(finalLinkToContent);
       }         
     }
 
