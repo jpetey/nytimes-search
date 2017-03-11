@@ -18,3 +18,32 @@
   color: #fff;
 
 }
+
+#article-number {
+  float: left;
+  margin-right: 6px;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #ffffff;
+  background-color: #2c3e50;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#headline {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #2c3e50;
+}
+
+.news-articles {
+  background-color: #ecf0f1;
+  margin: 20px 5px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.news-articles > a {
+  color: #18bc9c;
+}
