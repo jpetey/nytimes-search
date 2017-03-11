@@ -1,5 +1,30 @@
 body {
-  font-family: 'Georgia', Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
+}
+
+h1 {
+  font-family: 'Engravers', Helvetica, sans-serif;
+  font-size: 45px;  
+}
+
+#font-break {
+  font-family: Helvetica, sans-serif;
+}
+
+.blue-font {
+  color: #4285f4;
+}
+
+.red-font {
+  color: #ea4335;
+}
+
+.yellow-font {
+  color: #fbbc05;
+}
+
+.green-font {
+  color: #34a853;
 }
 
 .jumbotron {
